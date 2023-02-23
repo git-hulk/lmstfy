@@ -38,7 +38,7 @@ jobs:
 
       - name: Build Docker arm64 Image
         run: |
-          export TARGET_ARCH=arm64
+          export TARGET_ARCH="arm64"
           export IMAGE_NAME="bitleak/lmstfy"
           export IMAGE_TAG="$RELEASE_TAG-$TARGET_ARCH"
           docker build -t $IMAGE_NAME:$IMAGE_TAG .
