@@ -11,12 +11,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        go-version: [1.17.x]
         include:
           - name: ARM64
             arch: arm64
+            go-version: [1.17.x]
           - name: AMD64
             arch: amd64
+            go-version: [1.17.x]
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout Code Base
@@ -41,3 +42,5 @@ jobs:
           export IMAGE_TAG="$RELEASE_TAG-$TARGET_ARCH"
           docker build -t $IMAGE_NAME:$IMAGE_TAG .
           docker push $IMAGE_NAME:$IMAGE_TAG
+        with:
+          go-version: ${{matrix.go-version}}
