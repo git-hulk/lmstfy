@@ -13,9 +13,9 @@ jobs:
       matrix:
         include:
           - name: ARM64
-            arch:arm64
-          - name: AMM64
-            arch:amd64
+            arch: arm64
+          - name: AMD64
+            arch: amd64
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout Code Base
