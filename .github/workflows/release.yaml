@@ -48,4 +48,4 @@ jobs:
 
       - name: Build And Push Docker Image
         run: |
-          docker buildx build --platform linux/amd64,linux/arm64 --tag bitleak/lmstfy:$RELEASE_TAG --tag bitleak/lmstfy:latest . --output-type=registry
+          docker buildx build --push --platform linux/amd64,linux/arm64 --tag bitleak/lmstfy:$RELEASE_TAG --tag bitleak/lmstfy:latest .
