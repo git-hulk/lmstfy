@@ -1,5 +1,4 @@
-ARG PLATFORM
-FROM --platform=$PLATFORM golang:1.17
+FROM golang:1.17
 
 WORKDIR /lmstfy
 
