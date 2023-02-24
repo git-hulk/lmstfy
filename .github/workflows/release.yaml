@@ -41,7 +41,7 @@ jobs:
           export TARGET_ARCH="arm64"
           export IMAGE_NAME="bitleak/lmstfy"
           export IMAGE_TAG="$RELEASE_TAG-$TARGET_ARCH"
-          docker build -t $IMAGE_NAME:$IMAGE_TAG .
+          build  -t $IMAGE_NAME:$IMAGE_TAG . --build-arg PLATFORM=$TARGET_ARCH --build-arg TARGET_ARCH=$TARGET_ARCH
           docker push $IMAGE_NAME:$IMAGE_TAG
 
       - name: Build Docker amd64 Image
@@ -49,7 +49,7 @@ jobs:
           export TARGET_ARCH=amd64
           export IMAGE_NAME="bitleak/lmstfy"
           export IMAGE_TAG="$RELEASE_TAG-$TARGET_ARCH"
-          docker build -t $IMAGE_NAME:$IMAGE_TAG .
+          build -t $IMAGE_NAME:$IMAGE_TAG . --build-arg PLATFORM=$TARGET_ARCH --build-arg TARGET_ARCH=$TARGET_ARCH
           docker push $IMAGE_NAME:$IMAGE_TAG
 
       - name: Merge Docker Image

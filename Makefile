@@ -11,7 +11,7 @@ all: $(PROGRAM)
 .PHONY: all
 
 $(PROGRAM):
-	@bash build.sh
+	@TARGET_OS=$(TARGET_OS) TARGET_ARCH=$(TARGET_ARCH) bash build.sh
 	@echo ""
 	@printf $(MAKECOLOR)"Hint: It's a good idea to run 'make test' ;)"$(ENDCOLOR)
 	@echo ""
